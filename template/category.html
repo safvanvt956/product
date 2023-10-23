@@ -1,0 +1,56 @@
+{% extends "partail/base.html" %}
+{% load static %}
+{% block content %}
+
+            <!-- Body Container -->
+            <div id="page-content">
+                <!--Page Header-->
+                <div class="page-header text-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 d-flex justify-content-between align-items-center">
+                                <div class="page-title"><h1>CATEGORY</h1></div>
+                                <!--Breadcrumbs-->
+                                <div class="breadcrumbs"><a href="index-2.html" title="Back to the home page">Home</a></div>
+                                <!--End Breadcrumbs-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+
+                
+
+                <!--Meet Our Team section-->
+                <div class="team-section section">
+                    <div class="container">
+                        <div class="section-header">
+                            <p class="mb-2 mt-0">Dreams and teams work together</p>
+                            <h2>Our Amazing Team</h2>
+                        </div>
+
+                        <div class="team-items row col-row row-cols-lg-4 row-cols-md-4 row-cols-sm-2 row-cols-2 text-center">
+                            {% for cate in categorys %}
+                            <div class="team-item col-item">
+                                <div class="team-img zoom-scal rounded-0">
+                                    <img class="rounded-0 blur-up lazyload w-100" data-src="{{cate.image.url}}" src="{{cate.image.url}}" alt="team" width="350" height="350" />
+                                </div>  
+                                <div class="team-bio pt-3">
+                                    <h3 class="mb-2">{{cate.title}}</h3>
+                                    <p>{{cate.parshapa}}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+         
+
+    </body>
+</html>
+
+{% endblock %}
